@@ -39,8 +39,8 @@ import Constants from 'expo-constants';
          setShowButton(true)
        }
        }
-      const changediscount = (EnteredValue) =>{
-        var ddiscount=EnteredValue
+      const changediscount = (value) =>{
+        var ddiscount=value
         setDiscount(ddiscount);
         var ssave=(price * (ddiscount / 100));
         setSave(ssave);
