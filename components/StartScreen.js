@@ -3,7 +3,6 @@ import { Text,TextInput, View,FlatList, StyleSheet, Button, TouchableOpacity,Nav
 import Constants from 'expo-constants';
 
 
-
  export default function  StartScreen ({route,navigation}) {
      const[price,setPrice]=useState(0)
      const[discount,setDiscount]=useState(0)
@@ -15,7 +14,6 @@ import Constants from 'expo-constants';
      
      
 
-
      const [meeting, setMeeting]=useState([{
          price: "",
          discount:"",
@@ -26,7 +24,7 @@ import Constants from 'expo-constants';
          discount:"",
          fprice: ""
          }])
-     const updateprice = (EnteredValue) =>{
+     const changeprice = (EnteredValue) =>{
        var pprice=EnteredValue
        setPrice(pprice);
        setShowButton(true)
@@ -41,7 +39,7 @@ import Constants from 'expo-constants';
          setShowButton(true)
        }
        }
-      const updatediscount = (EnteredValue) =>{
+      const changediscount = (EnteredValue) =>{
         var ddiscount=EnteredValue
         setDiscount(ddiscount);
         var ssave=(price * (ddiscount / 100));
@@ -109,7 +107,7 @@ const viewhistory =()=>{
         style={{ width: 200, textAlign: 'center', borderWidth: 2 ,borderColor: '#FF5722', height: 50, }}
         placeholder="Enter Price"
         keyboardType='numeric'
-        onChangeText={ EnteredValue => updateprice(EnteredValue) }
+        onChangeText={ value => changeprice(value) }
       />
     </View>
      
@@ -120,7 +118,7 @@ const viewhistory =()=>{
         style={{ width: 200, textAlign: 'center', borderWidth: 2 ,borderColor: '#FF5722', height: 50, }}
         placeholder="Enter Discount"
         keyboardType='numeric'
-        onChangeText={ EnteredValue => updatediscount(EnteredValue) }
+        onChangeText={ value => changediscount(value) }
       />
       </View>
       </View>
@@ -188,3 +186,5 @@ const viewhistory =()=>{
 
   
 });
+
+
