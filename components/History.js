@@ -19,7 +19,7 @@ import Constants from 'expo-constants';
      
   return (
     <View style={styles.container}>
-    <View>
+    <View style={styles.tableback}>
     
     <FlatList
         data={history}
@@ -69,6 +69,10 @@ import Constants from 'expo-constants';
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 15,
+    backgroundColor: '#E3DC02'
+  },
+  tableback: {
+    
     backgroundColor: '#E3DC02'
   },
 
